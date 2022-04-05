@@ -2,7 +2,7 @@
 layout: post
 title:  "Anet A8 auto bed leveling with Marlin"
 description: "Custom Z height probe for Anet A8"
-date:   2022-04-04 20:15:00 +0200
+date:   2022-04-05 10:15:00 +0200
 categories: 3dprinting
 thumbnail: /assets/bedlevelprobe_image.png
 ---
