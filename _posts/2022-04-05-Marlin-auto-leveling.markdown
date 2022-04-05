@@ -4,7 +4,7 @@ title:  "Anet A8 auto bed leveling with Marlin"
 description: "Custom Z height probe for Anet A8"
 date:   2022-04-04 20:15:00 +0200
 categories: 3dprinting
-thumbnail: /assets/bedlevelprobe.png
+thumbnail: /assets/bedlevelprobe_image.png
 ---
 Anet A8 is a pretty terrible printer, it has absolutely zero frame rigidity and it cant really handle any printing speeds above 35mm/s. However the most annoying thing about it is how hard it is to level the bed, so after seeing [this post](https://www.reddit.com/r/ender3/comments/chs7qa/hello_all_im_a_new_happy_owner_of_an_ender_3/) showing an easy way to build an auto leveling probe on reddit i got inspired to build my own.
 
