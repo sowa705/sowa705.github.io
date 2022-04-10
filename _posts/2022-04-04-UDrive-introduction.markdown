@@ -3,7 +3,7 @@ layout: post
 title:  "Introduction to UDrive"
 description: "FOSS Vehicle simulation library for Unity"
 date:   2022-04-04 20:15:00 +0200
-categories: udrive
+categories: udrive unity
 thumbnail: /assets/udrive/udrive0.1thumb.jpg
 ---
 ![UDrive thumbnail](/assets/udrive/udrive0.1thumb.jpg)

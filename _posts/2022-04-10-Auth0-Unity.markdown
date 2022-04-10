@@ -1,0 +1,54 @@
+---
+layout: post
+title:  "Secure API user authentication for Unity with Auth0"
+description: "Connecting your frontend with the backend in a (hopefully) secure manner"
+date:   2022-04-10 10:15:00 +0200
+categories: unity
+thumbnail: /assets/api/connected.png
+---
+
+My current "big" project is an online multiplayer game. That obviously requires complex back-end logic to connect players together and provide features that everyone expects in modern games but how do we actually accomplish that?
+
+The actual backend part isn't that hard - just use ASP.NET core and possibly share parts of the code between client and the server but what about actually logging in into that API?
+
+* Write our own authentication system
+    * Prone to bugs (absolute disaster in the EU because of GDPR)
+    * Massive waste of time
+* Publish the game to a major store (Steam, EGS)
+    * Easy to use (Most of them offer API's for Unity)
+    * Social functions integrated already
+    * Locks the game in with a specific store
+* External OAuth provider with a custom API
+    * Quick and easy integration with the backend
+    * Secure
+
+Considering i dont plan to release my game on any of the major game retailers i chose to go with an external OAuth provider. Out of all of them i chose Auth0 because they offer a free plan for small projects and overall seem to be quite good.
+
+![API Map](/assets/api/apimap.png)
+
+While Auth0 does offer an easy to use NuGet package for my backend unfortunately they dont offer an unity package for my client but fortunately writing an OAuth client is not that hard.
+
+Unity doesnt let us integrate a built-in browser so i chose to use the device authorization flow that's typically used for devices with limited input like set-top boxes.
+
+### Authentication process
+When the game starts we get the device code from the Auth0 API
+
+![Game view](/assets/api/start.png)
+
+When we get that code we start user's default browser where they can log in (its actually quite nice because user can use their password manager).
+
+![Auth0 in browser](/assets/api/confirmation.png)
+
+User doesnt need to copy and paste that code, its already typed in when the site loads.
+
+In the background the game is polling Auth0 and waiting until user clicks confirm on the page and logs in.
+
+![Auth0 in browser](/assets/api/connected.png)
+
+When that's done Auth0 sends the final JWT token we can use to authenticate with our API
+
+![Game logged in](/assets/api/loggedin.png)
+
+As you can see I have some basic friend list functionality working using my API.
+
+Overall I hope this has been useful in choosing an authentication system for your game. When i get the auth0 client working better I'll release it on GitHub as an Unity package.
