@@ -27,7 +27,7 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  sowa705
 youtube_channel: UCzWSYNCVXmB_aCvd0Db2m_w
 youtube_channel_name: Łukasz Sowa
-
+future: true
 # Build settings
 theme: minima
 plugins:
